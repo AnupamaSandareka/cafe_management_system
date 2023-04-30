@@ -17,7 +17,8 @@ import java.util.ArrayList;
         @TypeDef(name = "json", typeClass = JsonType.class)
 })
 @AllArgsConstructor
-@NoArgsConstructor@Data
+@NoArgsConstructor
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -43,4 +44,11 @@ public class User {
     @Column(name = "user_role")
     private String userRole;
 
+    public User(Integer userId,String userName, ArrayList contact_numbers, String userEmail, String userPassword) {
+        this.userId = userId;
+        this.userName = userName;
+        this.contact_numbers = contact_numbers;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+    }
 }
